@@ -19,11 +19,6 @@ use App\Http\Controllers\Guest\PageController as PageController;
 
 Route::get('/', [PageController::class, 'index']);
 
-// Route::get('/', function () {
-//     $links = config('store.someLinks');
-//     return view('welcome', compact('links'));
-// });
-
 Route::get('/otherpage', function () {
     $links = config('store.someLinks');
     return view('other', compact('links'));
