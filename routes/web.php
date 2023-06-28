@@ -1,6 +1,10 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+// use Illuminate\Support\Facades\Route;
+
+// indichiamo dove trovare la classe PageController (FARE ATTEZIONE: '\' NON '/')
+
+use App\Http\Controllers\Guest\PageController as PageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +17,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $links = config('store.someLinks');
-    return view('welcome', compact('links'));
-});
+Route::get('/', [PageController::class, 'index']);
+
+// Route::get('/', function () {
+//     $links = config('store.someLinks');
+//     return view('welcome', compact('links'));
+// });
 
 Route::get('/otherpage', function () {
     $links = config('store.someLinks');
